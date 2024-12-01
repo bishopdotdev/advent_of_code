@@ -1,5 +1,12 @@
 # advent_of_code
 
+## Ruby
+
+```sh
+brew install rbenv
+rbenv install 3.3.2
+```
+
 ## Installation
 
 ```sh
