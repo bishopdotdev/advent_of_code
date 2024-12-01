@@ -1,0 +1,26 @@
+AllCops:
+  NewCops: enable
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Gemspec/AddRuntimeDependency:
+  Enabled: true
+
+Gemspec/DeprecatedAttributeAssignment:
+  Enabled: true
+
+Gemspec/DevelopmentDependencies:
+  Enabled: true
+
+Gemspec/RequireMFA:
+  Enabled: true
+
+Layout/LineContinuationLeadingSpace:
+  Enabled: true
+
+Layout/LineContinuationSpacing:
+  Enabled: true
