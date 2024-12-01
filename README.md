@@ -10,8 +10,8 @@ bundle install
 ## Usage
 
 ```sh
-bin/aoc new 2024 1 # Create template files for a new day
-bin/aoc solve 2024 1 # Solve puzzle for specific year and day
+./aoc new 2024 1 # Create template files for a new day
+./aoc solve 2024 1 # Solve puzzle for specific year and day
 rspec # Run All tests
 rspec spec/years/2024 # Run tests for a specific year
 rspec spec/years/2024/day_01_spec.rb # Run tests for a specific day
