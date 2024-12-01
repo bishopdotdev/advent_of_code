@@ -24,6 +24,26 @@ rspec spec/years/2024 # Run tests for a specific year
 rspec spec/years/2024/day_01_spec.rb # Run tests for a specific day
 ```
 
+## Installations
+
+- Start at `spec/years/20xx/day_xx_spec.rb` and add your test cases
+
+```ruby
+# find this block and add your example input here
+let(:example_input) do
+  <<~INPUT
+      # Put your example input here
+    INPUT
+  end
+
+  # find this line and update nil with your expected answer
+  expect(solution[:part1]).to eq(nil) # Update with expected answer
+```
+- Add your day's input file in `inputs/20xx/day_xx.txt`
+- Work on your solution in `lib/years/20xx/day_xx.rb`
+- Test your solution by running `rspec spec/years/20xx/day_xx_spec.rb`
+- Run `bin/aoc solve 20xx xx` to see your results
+
 ## Editor
 
 - [Rubocop](https://github.com/rubocop/rubocop)
