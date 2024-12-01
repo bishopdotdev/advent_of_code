@@ -26,8 +26,8 @@ rspec spec/years/2024/day_01_spec.rb # Run tests for a specific day
 
 ## Editor
 
-[Rubocop](https://github.com/rubocop/rubocop)
-[Ruby Extensions Pack](https://marketplace.visualstudio.com/items?itemName=Shopify.ruby-extensions-pack)
+- [Rubocop](https://github.com/rubocop/rubocop)
+- [Ruby Extensions Pack](https://marketplace.visualstudio.com/items?itemName=Shopify.ruby-extensions-pack)
 
 Make sure to update your vscode settings with the following:
 
