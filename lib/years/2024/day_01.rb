@@ -16,6 +16,10 @@ module AdventOfCode
 
       def solve_part1
         # Your solution for part 1
+        @input.each do |line|
+          puts line
+        end
+        0
       end
 
       def solve_part2

@@ -3,7 +3,7 @@
 require 'pry'
 
 # Require all solution files
-Dir['./lib/years/**/*.rb'].sort.each { |f| require f }
+Dir['./lib/years/**/*.rb'].each { |f| require f }
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
