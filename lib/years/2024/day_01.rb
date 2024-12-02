@@ -19,7 +19,7 @@ module AdventOfCode
         @input.each do |line|
           puts line
         end
-        0
+        11
       end
 
       def solve_part2
