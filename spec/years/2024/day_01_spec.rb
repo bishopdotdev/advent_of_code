@@ -24,7 +24,7 @@ RSpec.describe AdventOfCode::Year2024::Day01 do
   describe '#solve_part2' do
     it 'solves the example' do
       solution = described_class.new(example_input).solve
-      expect(solution[:part2]).to eq(nil) # Update with expected answer
+      expect(solution[:part2]).to eq(31) # Update with expected answer
     end
   end
 end

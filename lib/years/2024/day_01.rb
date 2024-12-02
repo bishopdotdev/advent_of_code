@@ -40,7 +40,19 @@ module AdventOfCode
       end
 
       def solve_part2
-        # Your solution for part 2
+        left_column = []
+        right_column = []
+        total = 0
+        @input.each do |line|
+          left_column << line.split[0].to_i
+          right_column << line.split[1].to_i
+        end
+
+        left_column.each do |left|
+          counts = right_column.count(left)
+          total += counts * left
+        end
+        total
       end
     end
   end
