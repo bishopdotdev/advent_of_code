@@ -16,10 +16,27 @@ module AdventOfCode
 
       def solve_part1
         # Your solution for part 1
+        left_column = []
+        right_column = []
+        total = 0
         @input.each do |line|
-          puts line
+          left_column << line.split[0].to_i
+          right_column << line.split[1].to_i
         end
-        11
+        left_column.sort!
+        right_column.sort!
+
+        left_column.size.times do |index|
+          right = right_column[index]
+          left = left_column[index]
+
+          if left < right
+            total += right - left
+          elsif left > right
+            total += left - right
+          end
+        end
+        total
       end
 
       def solve_part2

@@ -24,3 +24,6 @@ Layout/LineContinuationLeadingSpace:
 
 Layout/LineContinuationSpacing:
   Enabled: true
+
+Metrics/MethodLength:
+  Enabled: false
