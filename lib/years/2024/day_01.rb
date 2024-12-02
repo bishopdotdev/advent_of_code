@@ -15,7 +15,6 @@ module AdventOfCode
       private
 
       def solve_part1
-        # Your solution for part 1
         left_column = []
         right_column = []
         total = 0
@@ -23,6 +22,7 @@ module AdventOfCode
           left_column << line.split[0].to_i
           right_column << line.split[1].to_i
         end
+
         left_column.sort!
         right_column.sort!
 
