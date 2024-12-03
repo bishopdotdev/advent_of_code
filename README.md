@@ -14,6 +14,14 @@ gem install bundler
 bundle install
 ```
 
+## Reset
+
+If you would like to use this repo as a template and build your own Advent of Code solutions you can run a reset function! 🎉 This will delete all my attempts and data but keeping the CLI in tact to build your own solutions.
+
+```sh
+bin/aoc reset
+```
+
 ## Usage
 
 ```sh
@@ -39,6 +47,7 @@ let(:example_input) do
   # find this line and update nil with your expected answer
   expect(solution[:part1]).to eq(nil) # Update with expected answer
 ```
+
 - Add your day's input file in `inputs/20xx/day_xx.txt`
 - Work on your solution in `lib/years/20xx/day_xx.rb`
 - Test your solution by running `rspec spec/years/20xx/day_xx_spec.rb`
@@ -61,4 +70,3 @@ Make sure to update your vscode settings with the following:
       "editor.formatOnType": true, // Enable formatting while typing
   },
 ```
-

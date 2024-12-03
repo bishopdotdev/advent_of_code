@@ -46,9 +46,12 @@ module AdventOfCode
       puts "Created template files for Year #{year} Day #{day}"
     end
 
-    desc 'reset', 'Delete all year attempts and specs (with confirmation)'
+    desc 'reset', 'Delete all year attempts, specs, and inputs'
     def reset
-      puts '⚠️  WARNING: This will delete all year attempts, specs, and inputs.'
+      puts '⚠️  WARNING: This will delete all:'
+      puts '- Solution attempts (lib/years/*)'
+      puts '- Test specs (spec/years/*)'
+      puts '- Input files (inputs/*)'
       puts 'This action cannot be undone!'
       print 'Are you sure you want to continue? (y/N): '
 
@@ -59,12 +62,12 @@ module AdventOfCode
 
         dirs_to_remove.each do |dir|
           if Dir.exist?(dir)
-            FileUtils.rm_rf(dir)
-            puts "Removed #{dir}"
+            FileUtils.rm_rf(Dir.glob("#{dir}/*")) # Remove contents but keep directory
+            puts "Removed contents of #{dir}"
           end
         end
 
-        puts 'Reset complete. All solutions have been removed.'
+        puts 'Reset complete. All solutions and inputs have been removed.'
       else
         puts 'Reset cancelled.'
       end
