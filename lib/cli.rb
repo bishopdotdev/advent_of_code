@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'thor'
+require 'fileutils'
 
 # CLI interface for Advent of Code solutions
 module AdventOfCode
@@ -43,6 +44,30 @@ module AdventOfCode
       File.write("inputs/#{year}/day_#{day_padded}.txt", '')
 
       puts "Created template files for Year #{year} Day #{day}"
+    end
+
+    desc 'reset', 'Delete all year attempts and specs (with confirmation)'
+    def reset
+      puts '⚠️  WARNING: This will delete all year attempts, specs, and inputs.'
+      puts 'This action cannot be undone!'
+      print 'Are you sure you want to continue? (y/N): '
+
+      confirmation = STDIN.gets.chomp.downcase
+
+      if confirmation == 'y'
+        dirs_to_remove = ['lib/years', 'spec/years', 'inputs']
+
+        dirs_to_remove.each do |dir|
+          if Dir.exist?(dir)
+            FileUtils.rm_rf(dir)
+            puts "Removed #{dir}"
+          end
+        end
+
+        puts 'Reset complete. All solutions have been removed.'
+      else
+        puts 'Reset cancelled.'
+      end
     end
 
     private
