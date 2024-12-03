@@ -1,20 +1,20 @@
 # advent_of_code
 
-## Ruby
+## Install Ruby
 
 ```sh
 brew install rbenv
 rbenv install 3.3.2
 ```
 
-## Installation
+## Install Bundler and Dependencies
 
 ```sh
 gem install bundler
 bundle install
 ```
 
-## Reset
+## Reset Function
 
 If you would like to use this repo as a template and build your own Advent of Code solutions you can run a reset function! 🎉 This will delete all my attempts and data but keeping the CLI in tact to build your own solutions.
 
@@ -22,7 +22,7 @@ If you would like to use this repo as a template and build your own Advent of Co
 bin/aoc reset
 ```
 
-## Usage
+## CLI Usage
 
 ```sh
 bin/aoc new 2024 1 # Create template files for a new day
@@ -32,7 +32,7 @@ rspec spec/years/2024 # Run tests for a specific year
 rspec spec/years/2024/day_01_spec.rb # Run tests for a specific day
 ```
 
-## Installations
+## Test Setup
 
 - Start at `spec/years/20xx/day_xx_spec.rb` and add your test cases
 
@@ -53,10 +53,10 @@ let(:example_input) do
 - Test your solution by running `rspec spec/years/20xx/day_xx_spec.rb`
 - Run `bin/aoc solve 20xx xx` to see your results
 
-## Editor
+## Editor Setup
 
-- [Rubocop](https://github.com/rubocop/rubocop)
-- [Ruby Extensions Pack](https://marketplace.visualstudio.com/items?itemName=Shopify.ruby-extensions-pack)
+- Install [Rubocop](https://github.com/rubocop/rubocop) VS Code Extension
+- Install [Ruby Extensions Pack](https://marketplace.visualstudio.com/items?itemName=Shopify.ruby-extensions-pack) VS Code Extension
 
 Make sure to update your vscode settings with the following:
 
