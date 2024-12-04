@@ -54,7 +54,47 @@ module AdventOfCode
       end
 
       def solve_part2
-        # Your solution for part 2
+        grid = @input.map(&:chars)
+        count_xmas_patterns(grid)
+      end
+
+      def count_xmas_patterns(grid)
+        rows = grid.length
+        cols = grid[0].length
+        count = 0
+
+        # Iterate over the grid, looking for the center of the X (the "A")
+        (1...rows - 1).each do |i|
+          (1...cols - 1).each do |j|
+            next unless grid[i][j] == 'A'
+
+            # Define just the unique diagonal combinations that form an X
+            # Each array represents [first_diagonal_positions, second_diagonal_positions]
+            patterns = [
+              [[[-1, -1, 'M'], [1, 1, 'S']], [[-1, 1, 'M'], [1, -1, 'S']]], # M-A-S and M-A-S
+              [[[-1, -1, 'M'], [1, 1, 'S']], [[-1, 1, 'S'], [1, -1, 'M']]], # M-A-S and S-A-M
+              [[[-1, -1, 'S'], [1, 1, 'M']], [[-1, 1, 'M'], [1, -1, 'S']]], # S-A-M and M-A-S
+              [[[-1, -1, 'S'], [1, 1, 'M']], [[-1, 1, 'S'], [1, -1, 'M']]]  # S-A-M and S-A-M
+            ]
+
+            patterns.each do |first_diag, second_diag|
+              if valid_diagonal?(grid, i, j, *first_diag) &&
+                 valid_diagonal?(grid, i, j, *second_diag)
+                count += 1
+              end
+            end
+          end
+        end
+
+        count
+      end
+
+      def valid_diagonal?(grid, i, j, m_pos, s_pos)
+        m_i, m_j, m_char = m_pos
+        s_i, s_j, s_char = s_pos
+
+        grid[i + m_i][j + m_j] == m_char &&
+          grid[i + s_i][j + s_j] == s_char
       end
     end
   end
